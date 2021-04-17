@@ -1,0 +1,19 @@
+<div class="card">
+    <h5 class="card-header">Details</h5>
+    <div class="card-body">
+        <h5 class="card-title">{{data.name}}</h5>
+        <p class="card-text">Number of propellers : {{ data.propellers }}</p>
+        <p class="card-text">Drone speed: {{data.maxSpeed }}</p>
+    
+    </div>
+
+    <form action="/drones/{{data.id}}/edit" method="GET">
+         <button type="submit" class="btn btn-info">Edit</button></a>
+    </form>
+
+    <br>
+
+    <form action="/drones/{{data.id}}/delete" method="POST">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
