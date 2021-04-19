@@ -1,5 +1,4 @@
 // Iteration #1
-// Iteration #1
 const { Schema, model } = require('mongoose')
 
 let DroneSchema = new Schema({

@@ -8,7 +8,7 @@ const MyDrone = require('../models/Drone.model')
 //RENDER form to (user)--GET--
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-   res.render('../views/drones/create-form.hbs')
+   res.render('drones/create-form.hbs')
 });
 
 //CREATE (user) form input--POST--
@@ -33,7 +33,7 @@ router.get('/drones/:id', (req, res, next)=>{
   MyDrone.findById(id)
       .then((data)=>{
         // console.log(data)
-        res.render('../views/drones/drone-details.hbs', { data })
+        res.render('drones/drone-details.hbs', { data })
       })
       .catch((err)=>{
         console.log(err)
@@ -45,7 +45,7 @@ router.get('/drones', (req, res, next) => {
   MyDrone.find()
   .then((Alldrones) => {
     // console.log(drones)
-    res.render('../views/drones/list.hbs', { Alldrones })
+    res.render('drones/list.hbs', { Alldrones })
     
   }).catch((err) => {
     console.log(err)
@@ -60,7 +60,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
  console.log('render page')
   MyDrone.findById(id)
   .then((drone) => {
-   res.render('../views/drones/update-form.hbs', {drone})
+   res.render('drones/update-form.hbs', {drone})
   })
   .catch((err) => {
    console.log(err) 
